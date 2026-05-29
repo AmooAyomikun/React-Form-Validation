@@ -74,10 +74,6 @@ const App = () => {
     setCurrentStep(prev => prev - 1)
   }
 
-  function handleBack(){
-    setCurrentStep(prev => prev - 1)
-  }
-
   function handleReset() {
     localStorage.removeItem("multi-step-form")
     

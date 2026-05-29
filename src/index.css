@@ -143,10 +143,16 @@ label {
     color: #374151;
 }
 
-.input-wrapper,
-.password-wrapper {
+.input-wrapper {
     position: relative;
     width: 100%;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 input {
@@ -167,7 +173,7 @@ input:focus {
 
 .field-icon {
     position: absolute;
-    right: 16px;
+    right: 44px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 1rem;
@@ -199,24 +205,37 @@ input:focus {
 }
 
 .password-wrapper input {
-    padding-right: 76px; 
+    padding-right: 80px; 
+    width: 100%;
 }
 
 .toggle-password {
-    position: absolute;
-    right: 14px;
+    right: 12px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #6b7280;
-    padding: 8px;
     cursor: pointer;
     z-index: 3;
 }
 
-.password-wrapper ~ .field-icon {
-    right: 46px;
+.toggle-password:hover {
+  color: #374151;
+}
+
+.password-wrapper .field-icon {
+    position: absolute;
+    right: 42px; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
 }
 
 .password-strength {
