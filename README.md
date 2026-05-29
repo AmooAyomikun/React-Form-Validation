@@ -1,16 +1,25 @@
-# React + Vite
+#  React Multi-Step Account Registration Form
+A highly interactive, responsive, and performance-optimized Multi-Step Account Registration Form built using modern React and Vite. This project demonstrates state-driven UI management, complex step-by-step form validation, blur tracking (touched fields), and persistent state recovery using HTML5 LocalStorage.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  Live Preview
+https://amooayomikun.github.io/React-Form-Validation/
 
-Currently, two official plugins are available:
+##  Key Features
+-  **Modular Step-by-Step Architecture:** Keeps components decoupled by orchestrating separate steps (StepOne, StepTwo, StepThree) via a central state machine.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+-  **Real-time Stateful Validation:** Validates form fields instantaneously on user keystroke inputs (onChange) and element focus dropouts (onBlur).
 
-## React Compiler
+-  Visual Progress Trackers: Combines an intuitive stage tracker (StepIndicator) and a smooth progress indicator (ProgressBar) to visually communicate completion velocity.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-  Persistent Session Recovery: Utilizes continuous local cache state synchronization. If a user accidentally closes the browser tab mid-fill, their text progress is fully preserved.
 
-## Expanding the ESLint configuration
+-  Robust Error Scoping: Prevents submission forward-clicks by mass-flagging incomplete fields as touched if a user attempts to bypass validations.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Tech Stack & Concepts Demonstrated
+*  **Core UI Framework:** React (Functional Components & Hooks)
+
+*  **Build System:** Vite (Fast Refresh & Optimized Production Rollup)
+
+*  **State Operations:** useState for explicit data stores, useEffect for declarative LocalStorage browser writing pipelines.
+
+*  **Rendering Patterns:** Focused conditional rendering evaluation, lookup helper dictionaries, abstraction of validation logic from UI templates (validateStep).
