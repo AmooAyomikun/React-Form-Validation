@@ -164,6 +164,7 @@ input {
     background: white;
     font-size: 1rem;
     outline: none;
+    box-sizing: border-box;
 }
 
 input:focus {
@@ -205,7 +206,7 @@ input:focus {
 }
 
 .password-wrapper input {
-    padding-right: 80px; 
+    padding-right: 80px !important; 
     width: 100%;
 }
 
@@ -231,11 +232,13 @@ input:focus {
 
 .password-wrapper .field-icon {
     position: absolute;
-    right: 42px; 
+    right: 44px; 
     top: 50%;
     transform: translateY(-50%);
-    z-index: 2;
+    font-size: 1rem;
     pointer-events: none;
+    z-index: 2;
+    margin: 0;
 }
 
 .password-strength {
@@ -274,6 +277,29 @@ button {
     font-size: 0.975rem;
     font-weight: 600;
     cursor: pointer;
+}
+
+button.toggle-password {
+    position: absolute;
+    right: 14px; 
+    transform: translateY(-50%);
+    background: none !important; 
+    border: none !important;
+    padding: 4px !important;
+    margin: 0;
+    width: auto !important; 
+    height: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    cursor: pointer;
+    z-index: 3;
+}
+
+button.toggle-password:hover {
+    color: #374151;
+    background: none !important;
 }
 
 button:hover {
@@ -395,18 +421,14 @@ button:hover {
         gap: 12px;
     }
 
+    /* Standard application action triggers stretch fully */
     button {
         width: 100%;
         padding: 16px;
     }
 
-    .app-header h1 { font-size: 1.8rem; }
-    .step-title { font-size: 1.3rem; }
-    
-    .summary-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-        padding: 14px 0;
+    /* Explicit safety wrapper for absolute child layout computations */
+    .password-wrapper input {
+        padding-right: 80px !important;
     }
 }
